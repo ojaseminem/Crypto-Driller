@@ -1,3 +1,4 @@
+using Gameplay.Managers;
 using UnityEngine;
 
 namespace Gameplay.Player
@@ -15,11 +16,7 @@ namespace Gameplay.Player
         {
             if (other.CompareTag("Rock"))
             {
-                _playerController.DetectObstacle();
-            }
-
-            if (other.CompareTag("Prop"))
-            {
+                AudioManager.instance.PlaySound("Rock_Explosion");
                 _playerController.DetectObstacle();
             }
         }

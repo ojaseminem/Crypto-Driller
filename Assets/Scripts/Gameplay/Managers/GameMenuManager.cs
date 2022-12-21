@@ -77,6 +77,12 @@ namespace Gameplay.Managers
             AudioListener.volume = toggle ? 1 : 0;
         }
 
+        public void ResetTutorial()
+        {
+            SaveLoadManager.CurrentSaveData.tutorialCompleted = false;
+            SaveLoadManager.SaveGame();
+        }
+
         public void IncrementCoin()
         {
             coins++;

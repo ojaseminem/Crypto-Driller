@@ -9,7 +9,6 @@ TagManager:
   - FxTemporaire
   - EndComponent3D
   - Rock
-  - Prop
   layers:
   - Default
   - TransparentFX

@@ -115,6 +115,7 @@ namespace Gameplay.Player
             IEnumerator DigDelay()
             {
                 yield return new WaitForSeconds(.1f);
+                AudioManager.instance.PlayDrillingSound("Drilling");
                 shovel.Dig();
                 yield return new WaitForSeconds(.1f);
             }
@@ -127,6 +128,7 @@ namespace Gameplay.Player
             {
                 yield return new WaitForSeconds(.2f);
                 shovel.Dig();
+                AudioManager.instance.PlayDrillingSound("Drilling");
                 yield return new WaitForSeconds(.2f);
             }
         }
@@ -136,10 +138,12 @@ namespace Gameplay.Player
             StartCoroutine(DeathRoutine());
             IEnumerator DeathRoutine()
             {
+                AudioManager.instance.PauseSound("Drill");
                 camHandler.canMove = false;
                 dirtPs.Stop();
                 ScreenShakeHandler.instance.ScreenShake(.5f);
                 Instantiate(hitFx, transform.position, Quaternion.identity);
+                AudioManager.instance.PlaySound("Death_1");
                 yield return new WaitForSeconds(1f);
                 characterPivot.GetChild(0).gameObject.SetActive(false);
                 characterDestroyed.SetActive(true);

@@ -54,6 +54,17 @@ namespace Gameplay.Managers
         {
             SaveLoadManager.LoadGame();
             TimeCalculator.instance.BeginTimer();
+
+            var rand = Random.Range(0, 2);
+            switch (rand)
+            {
+                case 0:
+                    AudioManager.instance.PlaySound("Menu_BG_1");
+                    break;
+                case 1:
+                    AudioManager.instance.PlaySound("Menu_BG_2");
+                    break;
+            }
         }
 
         private void Tutorial()
@@ -68,7 +79,22 @@ namespace Gameplay.Managers
 
         private void Gameplay()
         {
+            var rand = Random.Range(0, 3);
+            switch (rand)
+            {
+                case 0:
+                    AudioManager.instance.PlaySound("Game_BG");
+                    break;
+                case 1:
+                    AudioManager.instance.PlaySound("Game_BG_2");
+                    break;
+                case 2:
+                    AudioManager.instance.PlaySound("Game_BG_3");
+                    break;
+            }
+
             camHandler.canMove = true;
+            AudioManager.instance.PlaySound("Drill");
             pc.canMove = true;
             pc.CanTouchMove();
             killMachine.GameBegan();

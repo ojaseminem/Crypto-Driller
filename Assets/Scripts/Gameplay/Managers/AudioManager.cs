@@ -1,6 +1,5 @@
 ﻿using Gameplay.Misc;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gameplay.Managers
 {
@@ -29,6 +28,20 @@ namespace Gameplay.Managers
             {
                 if (s.name == name)
                     s.source.Play();
+            }
+        }
+        
+        public void PlayDrillingSound(string name)
+        {
+            foreach (Sound s in sounds)
+            {
+                if (s.name == name)
+                {
+                    if(!s.source.isPlaying)
+                    {
+                        s.source.Play();
+                    }
+                }
             }
         }
 

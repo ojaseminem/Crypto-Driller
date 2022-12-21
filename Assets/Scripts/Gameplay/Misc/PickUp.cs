@@ -23,12 +23,12 @@ namespace Gameplay.Misc
             if (coinOrDiamond == 0)
             {
                 GameMenuManager.instance.IncrementCoin();
-                //AudioManager.instance.PlaySound("Coin");
+                AudioManager.instance.PlaySound("Coin");
             }
             else if(coinOrDiamond == 1)
             {
                 GameMenuManager.instance.IncrementDiamond();
-                //AudioManager.instance.PlaySound("Diamond");
+                AudioManager.instance.PlaySound("Diamond");
             }
 
             var pickedUpEffect = Instantiate(pickupEffect, transform.position, transform.rotation);
