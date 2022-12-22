@@ -39,6 +39,8 @@ namespace Gameplay.Managers
         
         public void Play()
         {
+            coins = 0;
+            diamonds = 0;
             GameManager.instance.ChangeState(GameState.Tutorial);
             coinText.text = coins.ToString();
             diamondText.text = diamonds.ToString();
