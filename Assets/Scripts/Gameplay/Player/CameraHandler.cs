@@ -20,12 +20,12 @@ namespace Gameplay.Player
                 if (_toggle)
                 {
                     _toggle = false;
-                    if (movementSpeedMultiplier < 3.5f) movementSpeedMultiplier += 0.05f * Time.fixedDeltaTime;
+                    if (movementSpeedMultiplier < 3.5f) movementSpeedMultiplier += 0.025f * Time.fixedDeltaTime;
                 }
                 else
                 {
                     _toggle = true;
-                    if (Time.timeScale < 2f) Time.timeScale += 0.0025f * Time.fixedDeltaTime;
+                    if (Time.timeScale < 2f) Time.timeScale += 0.0005f * Time.fixedDeltaTime;
                 }
             }
         }
